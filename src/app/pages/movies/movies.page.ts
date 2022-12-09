@@ -66,4 +66,11 @@ export class MoviesPage implements OnInit {
     this.currentPage++;
     this.loadMovies(event);
   }
+
+  onIonInfinite(ev:any) {
+    this.loadMore(ev);
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 }
